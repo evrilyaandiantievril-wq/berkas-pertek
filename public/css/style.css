@@ -1,0 +1,27 @@
+/* styles.css - styling tambahan agar tampilan lebih menarik */
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+}
+
+#tblBerkas tbody tr td {
+  vertical-align: middle;
+}
+
+.btn .bi {
+  margin-right: 6px;
+}
+
+/* responsive tweaks */
+@media (max-width: 768px) {
+  .modal-lg { max-width: 95%; }
+}
