@@ -1,0 +1,87 @@
+<% layout('layout') -%>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="d-flex align-items-center mb-3">
+      <h4 class="me-auto">Daftar Berkas Pertek</h4>
+      <button id="btn-add" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalForm">
+        <i class="bi bi-plus-lg"></i> Tambah Berkas
+      </button>
+    </div>
+
+    <div class="table-responsive">
+      <table id="tblBerkas" class="table table-striped table-hover table-bordered align-middle" style="width:100%">
+        <thead class="table-primary">
+          <tr>
+            <th>#</th>
+            <th>Nomor</th>
+            <th>Tanggal</th>
+            <th>Direktur</th>
+            <th>Perusahaan</th>
+            <th>Desa</th>
+            <th>Kecamatan</th>
+            <th>Luas (ha)</th>
+            <th>Peruntukan</th>
+            <th>Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Diisi via AJAX -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form (Tambah/Edit) -->
+<div class="modal fade" id="modalForm" tabindex="-1" aria-labelledby="modalFormLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <form id="formBerkas" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalFormLabel">Tambah Berkas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="berkasId" name="id" value="">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Nomor</label>
+            <input name="nomor" id="nomor" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Tanggal</label>
+            <input type="date" name="tanggal" id="tanggal" class="form-control" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Direktur</label>
+            <input name="direktur" id="direktur" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Perusahaan</label>
+            <input name="perusahaan" id="perusahaan" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Desa</label>
+            <input name="desa" id="desa" class="form-control">
+          </div>
+          <div class="col-md-4">
+            <label class="form-label">Kecamatan</label>
+            <input name="kecamatan" id="kecamatan" class="form-control">
+          </div>
+          <div class="col-md-2">
+            <label class="form-label">Luas (ha)</label>
+            <input type="number" step="0.01" name="luas" id="luas" class="form-control">
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Peruntukan</label>
+            <input name="peruntukan" id="peruntukan" class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+        <button type="submit" id="btnSave" class="btn btn-primary">Simpan</button>
+      </div>
+    </form>
+  </div>
+</div>
